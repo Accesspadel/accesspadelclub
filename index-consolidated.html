@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Padel — The World's Fastest Growing Sport</title>
+  <meta name="description" content="Access Padel in Hillsborough, NJ. Premium indoor padel courts, expert coaching, and a thriving community. Book your court today.">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+/* =============================================
+   ACCESS PADEL CLUB — V4 Premium
+   Inspired by Padel Haus + Conquer Padel
+   Typography-forward, editorial luxury
+   ============================================= */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --green-deep: #0b2e15;
+  --green-rich: #14522a;
+  --green-mid: #1a6b35;
+  --green-accent: #2d8a4e;
+  --green-light: #e6f0ea;
+  --cream: #f8f3ec;
+  --cream-soft: #f3ece2;
+  --cream-warm: #ede5d8;
+  --cream-dark: #e2d9cc;
+  --gold: #c7a56d;
+  --gold-light: #d4ba8a;
+  --gold-dark: #a8884f;
+  --white: #ffffff;
+  --off-white: #f9f9f9;
+  --black: #0a0a0a;
+  --text: #1d1d1b;
+  --text-secondary: #3a4a3e;
+  --text-muted: #6a7d6e;
+  --border: #e2dbd0;
+  --border-light: #eee8df;
+
+  /* Typography — two font system like Padel Haus */
+  --font-display: 'DM Serif Display', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --section-padding: 120px 0;
+  --section-padding-sm: 80px 0;
+  --container-width: 1200px;
+  --gap: 24px;
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-smooth: 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; width: 100%; }
+body {
+  font-family: var(--font-body); color: var(--text); background-color: var(--cream);
+  line-height: 1.7; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; width: 100%;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
+ul, ol { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; }
+
+.container { width: 90%; max-width: var(--container-width); margin: 0 auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+.text-center { text-align: center; }
+
+/* ---- Typography — editorial, tight, premium ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--green-deep);
+}
+h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  letter-spacing: -0.04em; /* Tight negative tracking like Padel Haus */
+}
+h2 {
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  letter-spacing: -0.03em;
+}
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  letter-spacing: -0.02em;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+h4 {
+  font-size: 1.125rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+p { margin-bottom: 1em; }
+p:last-child { margin-bottom: 0; }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+.section-title { margin-bottom: 24px; }
+.section-subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  line-height: 1.75;
+}
+.section-subtitle.centered { margin-left: auto; margin-right: auto; }
+
+/* ---- Buttons — architectural with hover fills (Conquer inspired) ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-smooth);
+  z-index: 1;
+}
+/* Fill animation on hover */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-smooth);
+}
+.btn:hover::before { transform: scaleX(1); }
+.btn:hover { transform: translateY(-2px); }
+
+.btn--primary {
+  background: var(--green-deep);
+  color: var(--white);
+  border: 2px solid var(--green-deep);
+}
+.btn--primary::before { background: var(--green-mid); }
+.btn--primary:hover { border-color: var(--green-mid); box-shadow: 0 12px 32px rgba(11,46,21,0.25); }
+
+.btn--secondary {
+  background: transparent;
+  color: var(--green-deep);
+  border: 2px solid var(--green-deep);
+}
+.btn--secondary::before { background: var(--green-deep); }
+.btn--secondary:hover { color: var(--white); box-shadow: 0 12px 32px rgba(11,46,21,0.15); }
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--green-deep);
+  border: 2px solid var(--gold);
+}
+.btn--gold::before { background: var(--gold-dark); }
+.btn--gold:hover { color: var(--white); border-color: var(--gold-dark); box-shadow: 0 12px 32px rgba(199,165,109,0.35); }
+
+.btn--white {
+  background: var(--white);
+  color: var(--green-deep);
+  border: 2px solid var(--white);
+}
+.btn--white::before { background: var(--cream); }
+.btn--white:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.4);
+}
+.btn--ghost::before { background: rgba(255,255,255,0.15); }
+.btn--ghost:hover { border-color: rgba(255,255,255,0.8); }
+
+.btn--large { padding: 20px 48px; font-size: 0.875rem; }
+.btn .arrow { transition: transform var(--transition); }
+.btn:hover .arrow { transform: translateX(4px); }
+
+/* ---- Navigation — fixed, clean, premium ---- */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 24px 0;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.navbar__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 90%; max-width: var(--container-width); margin: 0 auto;
+}
+.navbar__logo img { height: 64px; width: auto; transition: all var(--transition); }
+.navbar--scrolled .navbar__logo img { height: 46px; }
+.navbar__links { display: flex; align-items: center; gap: 40px; }
+.navbar__links a {
+  font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; position: relative;
+  transition: color var(--transition);
+}
+/* Underline hover animation */
+.navbar__links a:not(.btn)::after {
+  content: "";
+  position: absolute; bottom: -4px; left: 0; right: 0;
+  height: 2px; background: var(--gold);
+  transform: scaleX(0); transform-origin: right;
+  transition: transform var(--transition-smooth);
+}
+.navbar__links a:not(.btn):hover::after {
+  transform: scaleX(1); transform-origin: left;
+}
+.navbar__cta { margin-left: 16px; }
+
+.navbar--transparent { background: var(--cream); box-shadow: 0 1px 0 var(--border); }
+.navbar--transparent .navbar__links a:not(.btn) { color: var(--green-deep); }
+.navbar--transparent .navbar__links a:not(.btn):hover { color: var(--green-mid); }
+.navbar--transparent .navbar__links a:not(.btn)::after { background: var(--gold); }
+
+.navbar--scrolled {
+  background: rgba(248,243,236,0.97);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  padding: 16px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+}
+.navbar--scrolled .navbar__links a:not(.btn) { color: var(--green-deep); }
+.navbar--scrolled .navbar__links a:not(.btn):hover { color: var(--green-mid); }
+.navbar--scrolled .navbar__logo .logo-white { display: none !important; }
+.navbar--scrolled .navbar__logo .logo-dark { display: block !important; }
+
+.navbar--solid { background: var(--cream); box-shadow: 0 1px 0 var(--border); }
+.navbar--solid .navbar__links a:not(.btn) { color: var(--green-deep); }
+.navbar--solid .navbar__links a:not(.btn):hover { color: var(--green-mid); }
+.navbar--solid.navbar--scrolled { box-shadow: 0 1px 0 rgba(0,0,0,0.05); }
+
+.navbar__toggle { display: none; flex-direction: column; gap: 6px; padding: 8px; z-index: 1001; }
+.navbar__toggle span { width: 24px; height: 2px; background: var(--green-deep); transition: all var(--transition); border-radius: 1px; }
+.navbar--transparent .navbar__toggle span { background: var(--green-deep); }
+.navbar--scrolled .navbar__toggle span { background: var(--green-deep); }
+
+@media (max-width: 960px) {
+  .navbar__toggle { display: flex; }
+  .navbar__links {
+    position: fixed; top: 0; right: -100%; width: 320px; height: 100vh;
+    flex-direction: column; justify-content: center; gap: 32px;
+    background: var(--cream); transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: -8px 0 40px rgba(0,0,0,0.08);
+  }
+  .navbar__links.active { right: 0; }
+  .navbar__links a { color: var(--green-deep) !important; font-size: 1rem; }
+  .navbar__links a::after { display: none; }
+  .navbar__cta { margin-left: 0; }
+}
+
+/* ---- Hero — split layout, editorial ---- */
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 100vh; overflow: hidden;
+}
+.hero__content {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 100px 64px 100px 80px;
+  background: var(--green-deep);
+}
+.hero__image {
+  position: relative; overflow: hidden;
+}
+.hero__image img {
+  width: 100%; height: 100%; object-fit: cover;
+  object-position: center 20%;
+  animation: heroZoom 20s ease-in-out infinite alternate;
+}
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__image { min-height: 50vh; order: -1; }
+  .hero__content { padding: 48px 24px 64px; text-align: center; }
+  .hero__buttons { justify-content: center; }
+}
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.12); }
+}
+.hero__overlay { display: none; }
+.hero__content h1 {
+  color: var(--white); margin-bottom: 24px; font-weight: 400;
+  line-height: 1.0;
+}
+.hero__content h1 .highlight { color: var(--gold-light); }
+.hero__tagline {
+  color: rgba(255,255,255,0.8); font-size: clamp(1rem, 1.8vw, 1.1875rem);
+  margin-bottom: 40px; line-height: 1.7; max-width: 480px;
+}
+.hero__buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero__scroll-indicator {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  color: rgba(255,255,255,0.5); font-size: 0.625rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-family: var(--font-body); font-weight: 600;
+}
+.hero__scroll-indicator .line {
+  width: 1px; height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50% { opacity: 0.5; transform: scaleY(0.7); }
+}
+
+/* ---- Sections — color blocking (Conquer inspired) ---- */
+section { padding: var(--section-padding); width: 100%; }
+.section--cream { background: var(--cream); }
+.section--white { background: var(--white); }
+.section--off-white { background: var(--off-white); }
+.section--green {
+  background: var(--green-deep); color: var(--white);
+  position: relative; overflow: hidden;
+}
+.section--green::before {
+  content: ""; position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(199,165,109,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.section--green h2, .section--green h3, .section--green h4 { color: var(--white); }
+.section--green .section-label { color: var(--gold-light); }
+.section--green .section-subtitle { color: rgba(255,255,255,0.7); }
+.section--warm { background: var(--cream-soft); }
+.section--gold-bar {
+  background: var(--gold); padding: 60px 0;
+  color: var(--green-deep);
+}
+
+/* ---- Programs ---- */
+.programs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: 56px; }
+.program-card {
+  background: var(--white); border-radius: 16px; overflow: hidden;
+  transition: all var(--transition-smooth);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.08);
+  border-color: transparent;
+}
+.program-card__image { width: 100%; height: 240px; overflow: hidden; }
+.program-card__image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.program-card:hover .program-card__image img { transform: scale(1.08); }
+.program-card__body { padding: 32px; }
+.program-card__body h3 { margin-bottom: 12px; }
+.program-card__body p { color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: 20px; line-height: 1.7; }
+.program-card__link {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.75rem; font-weight: 700; color: var(--green-mid);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  transition: all var(--transition);
+}
+.program-card__link::after {
+  content: "→"; transition: transform var(--transition);
+}
+.program-card__link:hover { color: var(--green-deep); }
+.program-card__link:hover::after { transform: translateX(4px); }
+
+.calendar-wrapper {
+  margin-top: 56px; border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border-light); background: var(--white);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+.calendar-wrapper iframe { width: 100%; min-height: 600px; border: none; }
+
+@media (max-width: 768px) { .programs-grid { grid-template-columns: 1fr; } }
+
+/* ---- Split sections ---- */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.split--reverse { direction: rtl; }
+.split--reverse > * { direction: ltr; }
+.split__image { border-radius: 16px; overflow: hidden; position: relative; }
+.split__image img {
+  width: 100%; height: 100%; object-fit: cover; min-height: 440px;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.split__image:hover img { transform: scale(1.03); }
+.split__content { padding: 20px 0; }
+.split__content p { color: var(--text-secondary); font-size: 1.0625rem; margin-bottom: 24px; line-height: 1.8; }
+.split__content .section-title { margin-bottom: 20px; }
+
+@media (max-width: 768px) {
+  .split, .split--reverse { grid-template-columns: 1fr; gap: 40px; direction: ltr; }
+}
+
+/* ---- Stats — bold counters with gold accent ---- */
+.stats-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); padding: 60px 0; }
+.stat-item { text-align: center; padding: 28px 16px; position: relative; }
+.stat-item::after {
+  content: ""; position: absolute; right: 0; top: 20%; height: 60%;
+  width: 1px; background: rgba(255,255,255,0.1);
+}
+.stat-item:last-child::after { display: none; }
+.stat-item__number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 400; color: var(--gold);
+  line-height: 1; margin-bottom: 12px;
+  letter-spacing: -0.03em;
+}
+.stat-item__label {
+  font-size: 0.75rem; color: rgba(255,255,255,0.55);
+  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 600;
+}
+@media (max-width: 768px) {
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .stat-item:nth-child(2)::after { display: none; }
+}
+
+/* ---- Photo Strip — edge to edge ---- */
+.photo-strip { display: flex; gap: 6px; overflow: hidden; padding: 0; }
+.photo-strip img {
+  width: 25%; height: 320px; object-fit: cover; flex-shrink: 0;
+  filter: saturate(0.9);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.photo-strip img:hover { filter: saturate(1.1); transform: scale(1.02); }
+@media (max-width: 768px) { .photo-strip img { width: 50%; height: 220px; } }
+
+/* ---- Membership Cards ---- */
+.membership-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+.membership-card {
+  background: var(--white); border-radius: 16px; padding: 44px 36px;
+  border: 1px solid var(--border-light); position: relative;
+  transition: all var(--transition-smooth);
+}
+.membership-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 56px rgba(0,0,0,0.07);
+}
+.membership-card--featured {
+  border: 2px solid var(--green-deep);
+  box-shadow: 0 8px 32px rgba(11,46,21,0.08);
+}
+.membership-card__badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: var(--green-deep); color: var(--gold-light);
+  font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  padding: 8px 24px; border-radius: 100px;
+}
+.membership-card h3 { font-family: var(--font-body); font-size: 1.125rem; font-weight: 600; margin-bottom: 8px; }
+.membership-card__price {
+  font-family: var(--font-display); font-size: 3rem; color: var(--green-deep);
+  margin-bottom: 4px; letter-spacing: -0.03em;
+}
+.membership-card__price span { font-family: var(--font-body); font-size: 0.875rem; font-weight: 400; color: var(--text-muted); }
+.membership-card__desc { color: var(--text-secondary); font-size: 0.9375rem; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--border-light); }
+.membership-card__features { margin-bottom: 32px; }
+.membership-card__features li {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 10px 0; font-size: 0.9375rem; color: var(--text-secondary);
+}
+.membership-card__features li::before {
+  content: "✓"; color: var(--green-mid); font-weight: 700; flex-shrink: 0;
+}
+@media (max-width: 768px) { .membership-grid { grid-template-columns: 1fr; } }
+
+/* ---- Gallery ---- */
+.gallery-filters { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 48px; }
+.gallery-filter-btn {
+  padding: 12px 28px; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-muted); border: 1.5px solid var(--border);
+  border-radius: 100px; transition: all var(--transition-smooth); background: transparent;
+}
+.gallery-filter-btn:hover { border-color: var(--green-deep); color: var(--green-deep); }
+.gallery-filter-btn.active { background: var(--green-deep); color: var(--white); border-color: var(--green-deep); }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.gallery-item {
+  border-radius: 10px; overflow: hidden; position: relative;
+  cursor: pointer; aspect-ratio: 3/4;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
+  filter: saturate(0.85) brightness(0.95);
+}
+.gallery-item:hover img { transform: scale(1.1); filter: saturate(1) brightness(1); }
+.gallery-item__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(0deg, rgba(11,46,21,0.7) 0%, transparent 50%);
+  opacity: 0; transition: opacity var(--transition-smooth);
+  display: flex; align-items: flex-end; padding: 24px;
+}
+.gallery-item:hover .gallery-item__overlay { opacity: 1; }
+.gallery-item__overlay span {
+  color: var(--white); font-size: 0.8125rem; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.gallery-item--wide { grid-column: span 2; aspect-ratio: 3/2; }
+@media (max-width: 768px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } .gallery-item--wide { grid-column: span 2; } }
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(0,0,0,0.95);
+  display: none; align-items: center; justify-content: center;
+  padding: 40px; backdrop-filter: blur(8px);
+}
+.lightbox.active { display: flex; }
+.lightbox__close {
+  position: absolute; top: 24px; right: 24px; color: rgba(255,255,255,0.7);
+  font-size: 1.5rem; cursor: pointer; z-index: 2001;
+  width: 52px; height: 52px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--transition);
+}
+.lightbox__close:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 4px; object-fit: contain; }
+.lightbox__nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  color: rgba(255,255,255,0.7); font-size: 1.5rem; cursor: pointer;
+  width: 56px; height: 56px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--transition);
+}
+.lightbox__nav:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+.lightbox__nav--prev { left: 24px; }
+.lightbox__nav--next { right: 24px; }
+
+/* ---- Franchise Hero ---- */
+.franchise-hero {
+  position: relative; min-height: 75vh;
+  display: flex; align-items: center;
+  background: var(--green-deep); overflow: hidden;
+}
+.franchise-hero__content { position: relative; z-index: 2; max-width: 640px; }
+.franchise-hero__content h1 { color: var(--white); margin-bottom: 24px; line-height: 1.0; }
+.franchise-hero__content h1 .highlight {
+  color: var(--gold);
+  display: block; font-style: italic;
+}
+.franchise-hero__content p { color: rgba(255,255,255,0.75); font-size: 1.125rem; margin-bottom: 36px; line-height: 1.8; }
+.franchise-hero__image { position: absolute; right: 0; top: 0; bottom: 0; width: 48%; z-index: 1; }
+.franchise-hero__image img { width: 100%; height: 100%; object-fit: cover; }
+.franchise-hero__image::before {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(90deg, var(--green-deep) 0%, rgba(11,46,21,0.2) 100%);
+}
+@media (max-width: 768px) { .franchise-hero__image { display: none; } }
+
+/* ---- Accordion ---- */
+.accordion { margin-top: 48px; }
+.accordion__item {
+  border: 1px solid var(--border-light); border-radius: 12px;
+  margin-bottom: 12px; overflow: hidden; background: var(--white);
+  transition: all var(--transition-smooth);
+}
+.accordion__item:hover { border-color: var(--cream-dark); box-shadow: 0 4px 16px rgba(0,0,0,0.03); }
+.accordion__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 32px; cursor: pointer;
+  font-family: var(--font-body); font-size: 1.0625rem; font-weight: 600;
+  color: var(--green-deep); width: 100%; text-align: left;
+  transition: color var(--transition);
+}
+.accordion__header:hover { color: var(--green-mid); }
+.accordion__icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 1.25rem; color: var(--green-mid);
+  transition: all var(--transition);
+}
+.accordion__item.active .accordion__icon { transform: rotate(45deg); background: var(--green-deep); color: var(--gold); }
+.accordion__body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.accordion__body-inner { padding: 0 32px 28px; color: var(--text-secondary); font-size: 0.9375rem; line-height: 1.85; }
+
+/* ---- Steps ---- */
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-top: 56px; }
+.step { text-align: center; position: relative; }
+.step__number {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: var(--green-deep); color: var(--gold);
+  font-family: var(--font-display); font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+  transition: all var(--transition);
+}
+.step:hover .step__number { transform: scale(1.1); box-shadow: 0 8px 24px rgba(11,46,21,0.2); }
+.step h4 { margin-bottom: 10px; }
+.step p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+@media (max-width: 768px) { .steps { grid-template-columns: repeat(2, 1fr); gap: 28px; } }
+
+/* ---- Revenue Grid ---- */
+.revenue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.revenue-card {
+  background: var(--white); padding: 36px; border-radius: 16px;
+  border: 1px solid var(--border-light); text-align: center;
+  transition: all var(--transition-smooth);
+}
+.revenue-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(0,0,0,0.06); border-color: transparent; }
+.revenue-card__icon {
+  width: 60px; height: 60px; margin: 0 auto 20px;
+  background: var(--cream); border-radius: 14px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+}
+.revenue-card h4 { margin-bottom: 10px; }
+.revenue-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.7; }
+@media (max-width: 768px) { .revenue-grid { grid-template-columns: 1fr; } }
+
+/* ---- Contact ---- */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 56px; }
+.form-group { margin-bottom: 24px; }
+.form-group label {
+  display: block; font-size: 0.75rem; font-weight: 700; color: var(--text);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px;
+}
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 16px 20px; border: 1.5px solid var(--border);
+  border-radius: 8px; font-size: 0.9375rem; color: var(--text); background: var(--white);
+  transition: all var(--transition);
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  outline: none; border-color: var(--green-deep);
+  box-shadow: 0 0 0 4px rgba(11,46,21,0.06);
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: var(--cream-dark); }
+.form-group textarea { resize: vertical; min-height: 150px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.contact-info-card {
+  background: var(--white); padding: 28px; border-radius: 14px;
+  margin-bottom: 16px; border: 1px solid var(--border-light);
+  display: flex; gap: 20px; align-items: flex-start;
+  transition: all var(--transition);
+}
+.contact-info-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.04); transform: translateX(4px); }
+.contact-info-card__icon {
+  width: 48px; height: 48px; background: var(--green-deep);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; color: var(--gold); font-size: 1.125rem;
+}
+.contact-info-card h4 { font-size: 0.9375rem; margin-bottom: 4px; }
+.contact-info-card p { font-size: 0.875rem; color: var(--text-muted); }
+
+@media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 48px; } .form-row { grid-template-columns: 1fr; } }
+
+/* ---- CTA Banner — dramatic ---- */
+.cta-banner {
+  text-align: center; padding: 100px 20px;
+  background: var(--green-deep); position: relative; overflow: hidden;
+}
+.cta-banner::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(199,165,109,0.1) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 50%, rgba(199,165,109,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-banner h2 { color: var(--white); margin-bottom: 20px; position: relative; }
+.cta-banner p { color: rgba(255,255,255,0.6); font-size: 1.125rem; margin-bottom: 36px; position: relative; }
+
+/* ---- Footer ---- */
+.footer { background: var(--green-deep); color: rgba(255,255,255,0.65); padding: 100px 0 48px; width: 100%; }
+.footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 56px; margin-bottom: 72px; }
+.footer__brand p { font-size: 0.9375rem; margin-top: 24px; line-height: 1.7; max-width: 300px; }
+.footer__brand img { height: 40px; }
+.footer__heading {
+  font-family: var(--font-body); font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
+}
+.footer__links li { margin-bottom: 14px; }
+.footer__links a {
+  font-size: 0.9375rem; color: rgba(255,255,255,0.5);
+  transition: all var(--transition); position: relative;
+}
+.footer__links a:hover { color: var(--white); transform: translateX(2px); }
+.footer__social { display: flex; gap: 12px; margin-top: 28px; }
+.footer__social a {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,0.5); font-size: 0.8125rem; font-weight: 700;
+  transition: all var(--transition);
+}
+.footer__social a:hover { background: var(--gold); border-color: var(--gold); color: var(--green-deep); transform: translateY(-2px); }
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.08); padding-top: 36px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.8125rem; color: rgba(255,255,255,0.35);
+}
+.footer__bottom a { color: rgba(255,255,255,0.35); transition: color var(--transition); }
+.footer__bottom a:hover { color: rgba(255,255,255,0.7); }
+@media (max-width: 768px) { .footer__grid { grid-template-columns: 1fr 1fr; gap: 36px; } .footer__bottom { flex-direction: column; gap: 12px; text-align: center; } }
+
+/* ---- Animations — staggered reveals ---- */
+.fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.fade-in-left.visible { opacity: 1; transform: translateX(0); }
+.fade-in-right { opacity: 0; transform: translateX(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+.fade-in-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Stagger delays for children */
+.stagger > *:nth-child(1) { transition-delay: 0s; }
+.stagger > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* ---- Page Header ---- */
+.page-header { padding: 180px 0 100px; text-align: center; background: var(--cream-soft); }
+.page-header h1 { margin-bottom: 20px; }
+.page-header p { color: var(--text-secondary); font-size: 1.0625rem; max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+/* ---- Amenities ---- */
+.amenities-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; margin-top: 56px; }
+.amenity-item { text-align: center; padding: 28px 12px; transition: all var(--transition); }
+.amenity-item:hover { transform: translateY(-4px); }
+.amenity-item__icon {
+  width: 88px; height: 88px; margin: 0 auto 20px;
+  background: var(--white); border-radius: 22px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75rem; border: 1px solid var(--border-light);
+  transition: all var(--transition);
+  color: var(--green-mid);
+}
+.amenity-item__icon svg { width: 44px; height: 44px; }
+.amenity-item:hover .amenity-item__icon { border-color: var(--gold); box-shadow: 0 8px 24px rgba(199,165,109,0.15); }
+.amenity-item h4 {
+  font-family: var(--font-body); font-size: 0.75rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.06em; color: var(--text);
+}
+@media (max-width: 768px) { .amenities-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ---- Feature Grid (Franchising) ---- */
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+.feature-card {
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 36px;
+  transition: all var(--transition-smooth);
+}
+.feature-card:hover { background: rgba(255,255,255,0.08); transform: translateY(-4px); border-color: rgba(199,165,109,0.2); }
+.feature-card__icon { font-size: 2rem; margin-bottom: 20px; }
+.feature-card h4 { margin-bottom: 10px; color: var(--white); font-family: var(--font-body); }
+.feature-card p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.7; }
+@media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
+
+/* ---- Divider ---- */
+.divider { width: 60px; height: 3px; background: var(--gold); border-radius: 2px; margin: 24px 0; }
+.divider--center { margin-left: auto; margin-right: auto; }
+
+/* ---- App Promo ---- */
+.app-section { padding: 120px 0; }
+.app-promo { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.app-promo__badges { display: flex; gap: 16px; flex-wrap: wrap; }
+.app-badge { display: inline-block; transition: transform var(--transition); }
+.app-badge:hover { transform: scale(1.05); }
+.app-promo__visual { display: flex; justify-content: center; }
+.app-promo__phone { animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@media (max-width: 768px) {
+  .app-promo { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .app-promo__badges { justify-content: center; }
+  .app-promo__content p { margin-left: auto; margin-right: auto; }
+}
+
+/* ---- Footer App Badges ---- */
+.footer__app-badges { display: flex; gap: 12px; margin-top: 16px; }
+.footer__app-badges a {
+  display: inline-block; padding: 6px 14px; font-size: 0.75rem; font-weight: 600;
+  color: var(--cream); border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
+  text-decoration: none; transition: all var(--transition); letter-spacing: 0.02em;
+}
+.footer__app-badges a:hover { background: rgba(255,255,255,0.1); border-color: var(--gold); color: var(--gold-light); }
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--cream-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ---- Selection ---- */
+::selection { background: rgba(199,165,109,0.25); color: var(--green-deep); }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar--transparent">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">
+        <img src="images/logo-horizontal.png" alt="Access Padel" style="height:50px;">
+      </a>
+      <button class="navbar__toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navbar__links">
+        <a href="index.html">Home</a>
+        <a href="#programs">Programs</a>
+        <a href="https://book.accesspadelclub.com/f/accesspadel/memberships" target="_blank">Memberships</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="franchising.html">Franchising</a>
+        <a href="contact.html">Contact</a>
+        <a href="https://book.accesspadelclub.com/f/accesspadel/memberships" target="_blank" class="btn btn--gold navbar__cta">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section — Split Layout -->
+  <section class="hero hero--split">
+    <div class="hero__content">
+      <span class="section-label" style="color: var(--gold-light); margin-bottom: 28px;">Hillsborough, New Jersey</span>
+      <h1>Play the World's <span class="highlight">Fastest Growing</span> Sport.</h1>
+      <p class="hero__tagline">Premium courts. Expert coaching. A community built around the game that's taking over the world.</p>
+      <div class="hero__buttons">
+        <a href="https://book.accesspadelclub.com/f/accesspadel/memberships" target="_blank" class="btn btn--gold btn--large">Book a Court <span class="arrow">→</span></a>
+        <a href="#about" class="btn btn--ghost btn--large">Explore</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="images/hero/hero-main.jpg" alt="Player with Babolat racket at Access Padel — premium indoor courts with pro shop wall">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section--white" style="padding: 100px 0;">
+    <div class="container">
+      <div class="split fade-in">
+        <div class="split__image">
+          <img src="images/community.jpg" alt="Access Padel community gathering between courts">
+        </div>
+        <div class="split__content">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title">Where Community<br>Meets Competition</h2>
+          <p>Access Padel is New Jersey's premier destination for padel — the racquet sport that blends tennis, squash, and pure social energy into something you have to experience to understand.</p>
+          <p>Our state-of-the-art facility in Hillsborough features professional-grade courts, co-working spaces, and a community of players from every background and skill level. Whether you've never held a racket or you're training for your next tournament, this is your home court.</p>
+          <a href="contact.html" class="btn btn--secondary" style="margin-top: 12px;">Visit Us <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Amenities -->
+  <section class="section--cream">
+    <div class="container text-center">
+      <span class="section-label">The Experience</span>
+      <h2 class="section-title">A Club Built for Players</h2>
+      <p class="section-subtitle centered">Everything you need for the perfect padel session, all under one roof.</p>
+      <div class="amenities-grid stagger">
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="10" width="32" height="20" rx="2" stroke="currentColor" stroke-width="2"/><line x1="20" y1="10" x2="20" y2="30" stroke="currentColor" stroke-width="2"/><line x1="4" y1="20" x2="36" y2="20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/><circle cx="14" cy="20" r="2" fill="currentColor"/><circle cx="26" cy="20" r="2" fill="currentColor"/><line x1="4" y1="8" x2="36" y2="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Professional-Grade Courts</h4>
+        </div>
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 32V12L20 4L34 12V32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="22" width="12" height="10" rx="1" stroke="currentColor" stroke-width="2"/><line x1="6" y1="32" x2="34" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="14" r="2" fill="currentColor"/><line x1="20" y1="4" x2="20" y2="10" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h4>All-Season Indoor</h4>
+        </div>
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="6" width="24" height="28" rx="2" stroke="currentColor" stroke-width="2"/><path d="M14 6V4M26 6V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="14" x2="32" y2="14" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="24" r="5" stroke="currentColor" stroke-width="2"/><path d="M18 24L20 26L23 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h4>Pro Shop</h4>
+        </div>
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="28" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M12 14V10C12 8.89543 12.8954 8 14 8H26C27.1046 8 28 8.89543 28 10V14" stroke="currentColor" stroke-width="2"/><line x1="6" y1="22" x2="34" y2="22" stroke="currentColor" stroke-width="1.5"/><rect x="16" y="19" width="8" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="20" cy="22" r="1" fill="currentColor"/></svg>
+          </div>
+          <h4>Co-Working Spaces</h4>
+        </div>
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="8" width="20" height="26" rx="2" stroke="currentColor" stroke-width="2"/><rect x="14" y="12" width="5" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="12" width="5" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="23" width="5" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><rect x="21" y="23" width="5" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/><circle cx="17" cy="27" r="1" fill="currentColor"/><circle cx="24" cy="27" r="1" fill="currentColor"/></svg>
+          </div>
+          <h4>Locker Rooms</h4>
+        </div>
+        <div class="amenity-item fade-in">
+          <div class="amenity-item__icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6L22 12H28L23 16L25 22L20 18L15 22L17 16L12 12H18L20 6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><rect x="6" y="26" width="28" height="8" rx="2" stroke="currentColor" stroke-width="2"/><line x1="13" y1="26" x2="13" y2="34" stroke="currentColor" stroke-width="1.5"/><line x1="20" y1="26" x2="20" y2="34" stroke="currentColor" stroke-width="1.5"/><line x1="27" y1="26" x2="27" y2="34" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h4>Events &amp; Tournaments</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Strip -->
+  <div class="photo-strip">
+    <img src="images/gallery/dsc04835.jpg" alt="Player with racket wall">
+    <img src="images/gallery/dsc04853.jpg" alt="Player hitting ball">
+    <img src="images/gallery/dsc04758.jpg" alt="Player on court smiling">
+    <img src="images/gallery/dsc04842.jpg" alt="Player walking with racket wall">
+  </div>
+
+  <!-- Programs Section -->
+  <section id="programs" class="section--white" style="padding: 100px 0;">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-label">Ways to Play</span>
+        <h2 class="section-title">Programs for Every Level</h2>
+        <p class="section-subtitle centered">From your first swing to competitive match play, we have a program designed for you.</p>
+      </div>
+      <div class="programs-grid stagger">
+        <div class="program-card fade-in">
+          <div class="program-card__image">
+            <img src="images/coaching.jpg" alt="Padel coaching session at Access Padel">
+          </div>
+          <div class="program-card__body">
+            <h3>Clinics &amp; Lessons</h3>
+            <p>Structured group clinics and private lessons with certified coaches. Build technique, strategy, and confidence.</p>
+            <a href="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Open+Play%2CClinic&search=&view=grid" target="_blank" class="program-card__link">Reserve a Spot</a>
+          </div>
+        </div>
+        <div class="program-card fade-in">
+          <div class="program-card__image">
+            <img src="images/community-fun.jpg" alt="Open play at Access Padel">
+          </div>
+          <div class="program-card__body">
+            <h3>Open Play</h3>
+            <p>Drop in and play. Meet other players, get match experience, and have fun on the court — all levels welcome.</p>
+            <a href="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Open+Play&search=&view=grid" target="_blank" class="program-card__link">See Schedule</a>
+          </div>
+        </div>
+        <div class="program-card fade-in">
+          <div class="program-card__image">
+            <img src="images/player-happy.jpg" alt="Private event at Access Padel">
+          </div>
+          <div class="program-card__body">
+            <h3>Private Events</h3>
+            <p>Host your corporate outing, birthday, or team-building event. A unique experience your guests won't forget.</p>
+            <a href="mailto:info@accesspadelclub.com?subject=Private%20Event%20Inquiry" class="program-card__link">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendar Embed -->
+      <div class="calendar-wrapper fade-in" style="margin-top: 72px;">
+        <div style="padding: 32px 32px 16px; border-bottom: 1px solid var(--border-light);">
+          <span class="section-label">This Week at Access Padel</span>
+          <h3 style="margin-top: 4px;">Programs &amp; Schedule</h3>
+        </div>
+        <iframe src="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Compete%2CClinic%2CSocial%2CAcademy%2COpen+Play&search=&view=daily" title="Access Padel Programs &amp; Schedule" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Split -->
+  <section class="section--cream">
+    <div class="container">
+      <div class="split split--reverse fade-in">
+        <div class="split__image">
+          <img src="images/coaching-2.jpg" alt="Expert coaching at Access Padel">
+        </div>
+        <div class="split__content">
+          <span class="section-label">Our Coaches</span>
+          <h2 class="section-title">Learn from<br>the Best</h2>
+          <p>Our coaching team brings international experience and a passion for growing the sport. Whether you're working on your bandeja or learning the basics of court positioning, you'll get personalized guidance that actually moves your game forward.</p>
+          <p>Private lessons, group clinics, and junior programs — all designed to make you fall in love with padel.</p>
+          <a href="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Open+Play%2CClinic&search=&view=grid" target="_blank" class="btn btn--primary" style="margin-top: 12px;">Book a Lesson <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="section--green">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item fade-in">
+          <div class="stat-item__number" data-count="30+">0</div>
+          <div class="stat-item__label">Million Players Worldwide</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-item__number" data-count="300%">0</div>
+          <div class="stat-item__label">Growth in the U.S.</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-item__number" data-count="90+">0</div>
+          <div class="stat-item__label">Countries Playing Padel</div>
+        </div>
+        <div class="stat-item fade-in">
+          <div class="stat-item__number" data-count="1">0</div>
+          <div class="stat-item__label">Premier Club in NJ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Embed -->
+  <section class="section--white" style="padding: 100px 0;">
+    <div class="container text-center">
+      <span class="section-label">Memberships</span>
+      <h2 class="section-title">Find Your Plan</h2>
+      <p class="section-subtitle centered">Flexible options from casual to competitive. All memberships include community events and member perks.</p>
+      <div class="calendar-wrapper fade-in" style="margin-top: 48px;">
+        <iframe src="https://book.accesspadelclub.com/f/accesspadel/memberships" title="Access Padel Memberships" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile App Section -->
+  <section class="section--green app-section">
+    <div class="container">
+      <div class="app-promo fade-in">
+        <div class="app-promo__content">
+          <span class="section-label" style="color: var(--gold-light);">Get the App</span>
+          <h2 class="section-title" style="color: var(--white);">Book Courts.<br>Track Progress.<br>Stay Connected.</h2>
+          <p style="color: rgba(255,255,255,0.8); font-size: 1.0625rem; line-height: 1.7; max-width: 440px; margin-bottom: 32px;">Download the Access Padel app to book courts on the go, manage your membership, and never miss a program or event.</p>
+          <div class="app-promo__badges">
+            <a href="https://apps.apple.com/us/app/access-padel/id6754992682" target="_blank" class="app-badge" aria-label="Download on the App Store">
+              <svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="135" height="40" rx="6" fill="#000"/>
+                <text x="43" y="14" fill="#fff" font-family="Inter, sans-serif" font-size="7" font-weight="500">Download on the</text>
+                <text x="43" y="28" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">App Store</text>
+                <g transform="translate(12, 7) scale(0.65)">
+                  <path d="M24.769 20.3c-.029-3.223 2.626-4.791 2.745-4.864-1.5-2.188-3.826-2.487-4.646-2.516-1.962-.205-3.858 1.177-4.857 1.177-1.016 0-2.553-1.157-4.207-1.123-2.14.034-4.131 1.271-5.232 3.196-2.257 3.905-.576 9.663 1.589 12.826 1.082 1.553 2.356 3.288 4.025 3.227 1.629-.067 2.239-1.04 4.205-1.04 1.949 0 2.52 1.04 4.215.999 1.74-.028 2.847-1.564 3.888-3.132 1.258-1.784 1.766-3.534 1.788-3.626-.04-.013-3.407-1.302-3.443-5.187z" fill="white"/>
+                  <path d="M21.515 10.883c.874-1.093 1.472-2.58 1.306-4.089-1.264.056-2.837.877-3.742 1.945-.799.941-1.514 2.488-1.327 3.942 1.416.107 2.876-.72 3.763-1.798z" fill="white"/>
+                </g>
+              </svg>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.courtreserve.accesspadel" target="_blank" class="app-badge" aria-label="Get it on Google Play">
+              <svg width="135" height="40" viewBox="0 0 135 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="135" height="40" rx="6" fill="#000"/>
+                <text x="50" y="14" fill="#fff" font-family="Inter, sans-serif" font-size="7" font-weight="500">GET IT ON</text>
+                <text x="50" y="28" fill="#fff" font-family="Inter, sans-serif" font-size="14" font-weight="700">Google Play</text>
+                <g transform="translate(12, 7)">
+                  <path d="M7 3.13v19.74c0 .54.42.82.88.56L22.3 13.7a.68.68 0 0 0 0-1.2L7.88 2.57C7.42 2.31 7 2.59 7 3.13z" fill="url(#gp1)"/>
+                  <defs>
+                    <linearGradient id="gp1" x1="8" y1="2" x2="22" y2="14" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#00C3FF"/>
+                      <stop offset=".5" stop-color="#35E07D"/>
+                      <stop offset="1" stop-color="#F8D84E"/>
+                    </linearGradient>
+                  </defs>
+                </g>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="app-promo__visual">
+          <div class="app-promo__phone">
+            <svg width="220" height="420" viewBox="0 0 220 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="4" width="212" height="412" rx="32" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="rgba(255,255,255,0.05)"/>
+              <rect x="80" y="14" width="60" height="6" rx="3" fill="rgba(255,255,255,0.2)"/>
+              <rect x="20" y="50" width="180" height="100" rx="12" fill="rgba(255,255,255,0.1)"/>
+              <text x="110" y="90" fill="rgba(255,255,255,0.5)" font-family="Inter, sans-serif" font-size="11" font-weight="600" text-anchor="middle">ACCESS PADEL</text>
+              <text x="110" y="108" fill="rgba(255,255,255,0.35)" font-family="Inter, sans-serif" font-size="9" text-anchor="middle">Book Your Court</text>
+              <rect x="20" y="170" width="85" height="70" rx="10" fill="rgba(255,255,255,0.08)"/>
+              <text x="62" y="200" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Programs</text>
+              <text x="62" y="218" fill="rgba(255,255,255,0.3)" font-family="Inter, sans-serif" font-size="22" text-anchor="middle">12</text>
+              <rect x="115" y="170" width="85" height="70" rx="10" fill="rgba(255,255,255,0.08)"/>
+              <text x="157" y="200" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="9" font-weight="600" text-anchor="middle">Open Courts</text>
+              <text x="157" y="218" fill="rgba(255,255,255,0.3)" font-family="Inter, sans-serif" font-size="22" text-anchor="middle">4</text>
+              <rect x="20" y="260" width="180" height="44" rx="10" fill="rgba(199,165,109,0.3)"/>
+              <text x="110" y="287" fill="rgba(255,255,255,0.7)" font-family="Inter, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Book Now</text>
+              <rect x="20" y="320" width="180" height="44" rx="10" fill="rgba(255,255,255,0.08)"/>
+              <text x="110" y="347" fill="rgba(255,255,255,0.4)" font-family="Inter, sans-serif" font-size="12" font-weight="500" text-anchor="middle">View Schedule</text>
+              <rect x="76" y="394" width="68" height="5" rx="2.5" fill="rgba(255,255,255,0.2)"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container" style="position:relative;">
+      <h2>Ready to Step<br>on the Court?</h2>
+      <p>Join the fastest growing sport in the world. No experience needed.</p>
+      <a href="https://book.accesspadelclub.com/f/accesspadel/memberships" target="_blank" class="btn btn--gold btn--large">Book Now <span class="arrow">→</span></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="images/logo-cream-bg.png" alt="Access Padel" style="height:56px;">
+          <p>New Jersey's premier padel destination. Premium courts, expert coaching, and a community that plays together.</p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/accesspadel.us/" target="_blank" aria-label="Instagram">IG</a>
+            <a href="https://www.linkedin.com/company/access-padel-club" target="_blank" aria-label="LinkedIn">IN</a>
+            <a href="https://chat.whatsapp.com/CQGyDc8zBUdJm9GA04DqDo" target="_blank" aria-label="WhatsApp">WA</a>
+          </div>
+          <div class="footer__app-badges">
+            <a href="https://apps.apple.com/us/app/access-padel/id6754992682" target="_blank">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.courtreserve.accesspadel" target="_blank">Google Play</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigate</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="franchising.html">Franchising</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Play</h4>
+          <ul class="footer__links">
+            <li><a href="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Compete%2CClinic%2CSocial%2CAcademy%2COpen+Play&search=&view=daily" target="_blank">Book a Court</a></li>
+            <li><a href="https://book.accesspadelclub.com/f/accesspadel/memberships" target="_blank">Memberships</a></li>
+            <li><a href="mailto:info@accesspadelclub.com?subject=Private%20Event%20Inquiry">Private Events</a></li>
+            <li><a href="https://book.accesspadelclub.com/programs?facility_id=accesspadel&category=Open+Play%2CClinic&search=&view=grid" target="_blank">Lessons</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Visit</h4>
+          <ul class="footer__links">
+            <li><a href="https://maps.google.com/?q=330+Roycefield+Rd+Building+G+Hillsborough+NJ+08844" target="_blank">330 Roycefield Rd, Bldg G<br>Units 3 &amp; 4, Hillsborough, NJ 08844</a></li>
+            <li><a href="tel:+17324985107">(732) 498-5107</a></li>
+            <li><a href="mailto:info@accesspadelclub.com">info@accesspadelclub.com</a></li>
+            <li>Mon–Thu: 6 AM – 10 PM<br>Fri–Sun: 6 AM – 11 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Access Padel. All rights reserved.</span>
+        <div><a href="https://www.accesspadelclub.com/privacy-policy" target="_blank">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://www.accesspadelclub.com/terms-conditions" target="_blank">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* ============================================
+   ACCESS PADEL CLUB — V4 Premium JavaScript
+   Staggered reveals, smooth counters, polish
+   ============================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Navbar scroll behavior ---
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
+    const isTransparent = navbar.classList.contains('navbar--transparent');
+    const logoWhite = navbar.querySelector('.logo-white');
+    const logoDark = navbar.querySelector('.logo-dark');
+
+    let lastScroll = 0;
+    function updateNavbar() {
+      const scrolled = window.scrollY > 80;
+      if (scrolled) {
+        navbar.classList.add('navbar--scrolled');
+        if (logoWhite) logoWhite.style.display = 'none';
+        if (logoDark) logoDark.style.display = 'block';
+      } else {
+        navbar.classList.remove('navbar--scrolled');
+        if (isTransparent) {
+          if (logoWhite) logoWhite.style.display = 'block';
+          if (logoDark) logoDark.style.display = 'none';
+        }
+      }
+      lastScroll = window.scrollY;
+    }
+    window.addEventListener('scroll', updateNavbar, { passive: true });
+    updateNavbar();
+  }
+
+  // --- Mobile nav toggle ---
+  const toggle = document.querySelector('.navbar__toggle');
+  const navLinks = document.querySelector('.navbar__links');
+  if (toggle && navLinks) {
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      toggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+      });
+    });
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+      }
+    });
+  }
+
+  // --- Scroll animations with stagger support ---
+  const animatedEls = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+  if (animatedEls.length && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Check if parent has stagger class
+          const parent = entry.target.parentElement;
+          if (parent && parent.classList.contains('stagger')) {
+            // Stagger children as they come into view
+            const children = [...parent.children];
+            const index = children.indexOf(entry.target);
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, index * 100);
+          } else {
+            entry.target.classList.add('visible');
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    animatedEls.forEach(el => observer.observe(el));
+  }
+
+  // --- Counter animation with smooth easing ---
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => counterObserver.observe(el));
+  }
+
+  function animateCounter(el) {
+    const target = el.getAttribute('data-count');
+    const isPercentage = target.includes('%');
+    const hasPlus = target.includes('+');
+    const hasDollar = target.includes('$');
+    const hasM = target.includes('M');
+    const numericStr = target.replace(/[^0-9.]/g, '');
+    const targetNum = parseFloat(numericStr);
+    const duration = 2200;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Smoother ease-out-quart
+      const eased = 1 - Math.pow(1 - progress, 4);
+      let current = Math.round(eased * targetNum);
+
+      let display = '';
+      if (hasDollar) display += '$';
+      display += current;
+      if (hasM) display += 'M';
+      if (isPercentage) display += '%';
+      if (hasPlus) display += '+';
+
+      el.textContent = display;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  // --- Accordion with smooth animation ---
+  document.querySelectorAll('.accordion__header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const body = item.querySelector('.accordion__body');
+      const isActive = item.classList.contains('active');
+
+      // Close all in same accordion
+      item.closest('.accordion').querySelectorAll('.accordion__item').forEach(i => {
+        i.classList.remove('active');
+        const b = i.querySelector('.accordion__body');
+        b.style.maxHeight = '0';
+      });
+
+      // Open clicked if wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // --- Gallery filter with fade ---
+  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      galleryItems.forEach((item, i) => {
+        const match = filter === 'all' || item.getAttribute('data-category') === filter;
+        if (match) {
+          item.style.display = 'block';
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            item.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, i * 30);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.95)';
+          setTimeout(() => { item.style.display = 'none'; }, 300);
+        }
+      });
+    });
+  });
+
+  // --- Lightbox ---
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+  let currentLightboxIndex = 0;
+  let lightboxImages = [];
+
+  if (lightbox && lightboxImg) {
+    document.querySelectorAll('.gallery-item').forEach((item, i) => {
+      const img = item.querySelector('img');
+      if (img) {
+        lightboxImages.push(img.src);
+        item.addEventListener('click', () => {
+          currentLightboxIndex = i;
+          lightboxImg.src = lightboxImages[i];
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+    });
+
+    lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    const prevBtn = lightbox.querySelector('.lightbox__nav--prev');
+    const nextBtn = lightbox.querySelector('.lightbox__nav--next');
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); navigateLightbox(1); });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
+    });
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function navigateLightbox(dir) {
+    currentLightboxIndex = (currentLightboxIndex + dir + lightboxImages.length) % lightboxImages.length;
+    lightboxImg.style.opacity = '0';
+    setTimeout(() => {
+      lightboxImg.src = lightboxImages[currentLightboxIndex];
+      lightboxImg.style.opacity = '1';
+    }, 150);
+  }
+
+  // --- Smooth scroll ---
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = navbar ? navbar.offsetHeight + 20 : 20;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // --- Contact form ---
+  const forms = document.querySelectorAll('#contact-form, #franchise-form');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      setTimeout(() => {
+        btn.textContent = 'Message Sent!';
+        btn.style.opacity = '1';
+        form.reset();
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.disabled = false;
+        }, 3000);
+      }, 1200);
+    });
+  });
+
+  // --- Lightbox image transition ---
+  if (lightboxImg) {
+    lightboxImg.style.transition = 'opacity 0.15s ease';
+  }
+
+});
+
+  </script>
+</body>
+</html>
